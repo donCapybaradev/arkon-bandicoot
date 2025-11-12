@@ -1,8 +1,10 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+# .husky/pre-commit
 
-# 1) Biome sobre archivos staged de src/ (lint-staged)
-bunx lint-staged || exit 1
+# Falla el hook si cualquier comando regresa código != 0
+set -e
 
-# 2) Pruebas (cancela commit si fallan)
-bun run test:ci || exit 1
+# 1) Biome (lint + format) sobre archivos staged
+bunx lint-staged
+
+# 2) Ejecutar TODOS los tests (modo CI, sin watch)
+bun run test:ci
