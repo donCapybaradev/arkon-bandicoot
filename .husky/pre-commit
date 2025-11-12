@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 1) Biome sobre archivos staged de src/ (lint-staged)
+bunx lint-staged || exit 1
+
+# 2) Pruebas (cancela commit si fallan)
+bun run test:ci || exit 1
