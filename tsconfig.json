@@ -29,6 +29,6 @@
 
 		"types": ["vitest/globals"]
 	},
-	"include": ["src", "src/__tests__"],
+	"include": ["src", "src/__tests__", "./@mf-types"],
 	"exclude": ["node_modules", "dist", "build"]
 }

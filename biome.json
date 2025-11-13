@@ -1,60 +1,80 @@
-{
-	"$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
-	"vcs": {
-		"enabled": false,
-		"clientKind": "git",
-		"useIgnoreFile": true
-	},
-	"files": {
-		"ignoreUnknown": false
-	},
-	"formatter": {
-		"enabled": true,
-		"lineWidth": 100
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"style": {
-				"useImportType": {
-					"level": "on",
-					"options": { "style": "separatedType" }
-				}
+	{
+		"$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
+		"vcs": {
+			"enabled": false,
+			"clientKind": "git",
+			"useIgnoreFile": true
+		},
+		"files": {
+			"ignoreUnknown": false
+		},
+		"formatter": {
+			"enabled": true,
+			"lineWidth": 100
+		},
+		"linter": {
+			"enabled": true,
+			"rules": {
+				"recommended": true,
+				"style": {
+					"useImportType": {
+						"level": "on",
+						"options": { "style": "separatedType" }
+					}
+				},
+				"suspicious": {
+        	"noUnknownAtRules": "off"
+      	}
 			}
-		}
-	},
-	"assist": {
-		"actions": {
-			"source": {
-				"organizeImports": {
-					"level": "on",
-					"options": {
-						"groups": [
-							{
-								"type": false,
-								"source": [":BUN:", ":NODE:", ":PACKAGE:", ":URL:", ":ALIAS:", ":PATH:"]
-							},
-							":BLANK_LINE:",
-							{
-								"type": true,
-								"source": [":BUN:", ":NODE:", ":PACKAGE:", ":URL:", ":ALIAS:", ":PATH:"]
-							}
-						]
+		},
+		"assist": {
+			"actions": {
+				"source": {
+					"organizeImports": {
+						"level": "on",
+						"options": {
+							"groups": [
+								{
+									"type": false,
+									"source": [":BUN:", ":NODE:", ":PACKAGE:", ":URL:", ":ALIAS:", ":PATH:"]
+								},
+								":BLANK_LINE:",
+								{
+									"type": true,
+									"source": [":BUN:", ":NODE:", ":PACKAGE:", ":URL:", ":ALIAS:", ":PATH:"]
+								}
+							]
+						}
 					}
 				}
 			}
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "double",
-			"jsxQuoteStyle": "double",
-			"semicolons": "asNeeded",
-			"trailingCommas": "none",
-			"bracketSpacing": true,
-			"bracketSameLine": false,
-			"arrowParentheses": "always"
+		},
+		"javascript": {
+			"formatter": {
+				"quoteStyle": "double",
+				"jsxQuoteStyle": "double",
+				"semicolons": "asNeeded",
+				"trailingCommas": "none",
+				"bracketSpacing": true,
+				"bracketSameLine": false,
+				"arrowParentheses": "always"
+			}
+		},
+		"html": {
+			"formatter": {
+				"enabled": true,
+				"bracketSameLine": false
+			}
+		},
+		"css": {
+			"parser": {
+				"tailwindDirectives": true
+			},
+			"linter": {
+				"enabled": true
+			},
+			"formatter": {
+				"enabled": true
+			}
 		}
 	}
-}
