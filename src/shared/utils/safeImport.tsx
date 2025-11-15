@@ -1,7 +1,7 @@
 export function safeImport<T extends { default: React.ComponentType<any> }>(
 	factory: () => Promise<T>,
 	fallback: () => Promise<T> = () =>
-		import("@components/FallbackComponent/FallbackComponent") as unknown as Promise<T>
+		import("@/shared/ui/FallbackComponent/FallbackComponent") as unknown as Promise<T>
 ): Promise<T> {
 	return new Promise<T>((resolve, reject) => {
 		factory()
